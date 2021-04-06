@@ -15,6 +15,7 @@ function NavBar() {
   const isContact = pathname === "/contact" && "active";
   const isProject = pathname !== "/" && pathname !== "/contact" && "active";
 
+  const [openProjects, setOpenProjects] = useState(isProject ? true : false);
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const navigateTo = (navTo: string) => {
