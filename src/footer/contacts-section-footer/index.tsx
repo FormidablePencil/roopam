@@ -1,6 +1,7 @@
 import "./index.scoped.sass";
 import ArticleWrapper from "../article-wrapper";
 import { Link } from "react-router-dom";
+import { infoGmail } from "../../static-data/contacts";
 
 const ContactsSectionFooter = () => {
   const addresses = [
@@ -41,6 +42,7 @@ const ContactsSectionFooter = () => {
           </li>
         ))}
       </ul>
+      <p>{infoGmail}</p>
       <Link to="contact">© 2019 by Gestalt Diagnostics.</Link>
     </ArticleWrapper>
   );

@@ -1,4 +1,5 @@
 import Navbar from "./navbar";
+import NavBar from "./components/nav-bar";
 import VideoSection from "./video-section";
 import Articles from "./article";
 import SecondVideoSection from "./second-video-section";
@@ -12,7 +13,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
+        <NavBar />
+        {/* <Navbar /> */}
         <VideoSection />
         <CenterTextHome />
         <Articles content={firstArticles} />

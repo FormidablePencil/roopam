@@ -7,7 +7,7 @@ const ArticleWrapper = ({
 }: {
   title;
   children;
-  isContactSection;
+  isContactSection?;
 }) => {
   return (
     <li className={`container ${isContactSection && "contact-section"}`}>

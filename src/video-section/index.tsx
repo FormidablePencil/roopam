@@ -1,4 +1,4 @@
-import {bookImg} from "../static-data/images";
+import { bookImg } from "../static-data/images";
 import { homePageVid1 } from "../static-data/vidUrls";
 import "./index.scoped.sass";
 
@@ -9,9 +9,7 @@ function VideoSection() {
     <div className="container">
       <div className="text-container">
         <h1>Improving Pathology Diagnosis and Treatment – Anywhere, Anytime</h1>
-        <a href="/" className="link">
-          Gestalt Enables Best-in-Class Patient Care
-        </a>
+        <p>Gestalt Enables Best-in-Class Patient Care</p>
       </div>
 
       <video autoPlay muted loop className="video" id="myVideo">

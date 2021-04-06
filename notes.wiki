@@ -1,1 +1,7 @@
 No "Request a Demo" in navbar, it will be an action button in home page
+
+/Users/dennisaleksandrov/Documents/code/websites/roopam/src/footer/first-section-footer
+footer navigation items need to work really
+
+remove old navbar
+

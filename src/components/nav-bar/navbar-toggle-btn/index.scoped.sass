@@ -1,0 +1,25 @@
+@use '../../../styles/utilities'
+
+.container
+  display: none
+  @media (max-width: utilities.$smallScreen)
+    display: block
+    position: relative
+    cursor: pointer
+    top: 0
+    left: 0
+    width: 3.5em
+    height: 3.5em
+
+    .icon
+      position: absolute
+      z-index: 2
+      top: 12px
+      right: 12px
+      font-size: utilities.$iconSize
+      &-active
+        transform: scaleY(90deg)
+        transition: transform 1s 300ms
+
+
+

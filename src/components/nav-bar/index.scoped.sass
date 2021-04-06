@@ -1,0 +1,103 @@
+@use '../../styles/utilities'
+
+.on-tap-close-container
+  position: absolute
+  z-index: 2
+  height: 100%
+  width: 100vw
+
+.hide-on-small
+ @media (max-width: utilities.$smallScreen)
+  display: none
+.hide-on-large
+ @media (min-width: utilities.$smallScreen)
+  display: none
+
+.dropdown-icon
+  margin: -10px 5px -6px 5px
+  transform: rotateX(0deg)
+  transition: transform 1s
+  &-rotate
+    transform: rotateX(180deg)
+    transition: transform 1s 
+    @extend .dropdown-icon
+
+.closed-projects
+  overflow: hidden
+  height: 20px
+  transition: height 1s
+.open-projects
+  overflow: hidden
+  height: 150px
+  transition: height 1s
+
+.nav-item
+  text-decoration: none
+  color: utilities.$fontColor
+
+.active
+  color: white
+
+.absolute-container
+  top: 0
+  z-index: 3
+  position: fixed
+  width: 100%
+
+
+.container
+   background: utilities.$bgColor
+   top: 0
+   height: utilities.$navbarHeight
+   display: flex
+   justify-content: space-between
+   align-items: center
+   padding: 0 4em 0 4em
+   border: solid utilities.$secondaryColor 
+   border-bottom-width: .2em
+   @media (max-width: utilities.$smallScreen)
+    background-color: transparent
+    height: auto
+    align-items: flex-start
+    justify-content: flex-end
+    border: none
+    padding: 0
+    margin: 0
+
+    h1
+      margin: 0
+      @media (max-width: utilities.$smallScreen)
+        display: none
+
+ul
+  display: flex
+  flex-direction: row
+  justify-content: center
+  margin: 0
+  padding: 0
+  @media (max-width: utilities.$smallScreen)
+    transform: translateY(-350px)
+    transition: transform 1s 500ms
+    position: absolute
+    z-index: 1
+    width: 100%
+    top: 0
+    padding-top: utilities.$iconSize + 12px
+    flex-direction: column
+    background-color: rgba(34, 38, 43, .95)
+
+  li
+    cursor: pointer
+    padding: 1.5em 3em 1.5em 3em
+    &:last-child
+      padding-right: 1em
+    @media (max-width: utilities.$smallScreen)
+      padding: 1em
+      border: solid utilities.$secondaryColor 0
+      border-bottom-width: .2em
+      &:first-child
+        padding-top: 0       
+
+  &.active
+    transform: translateY(0px)
+    transition: transform 1s
