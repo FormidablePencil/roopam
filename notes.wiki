@@ -5,3 +5,4 @@ footer navigation items need to work really
 
 remove old navbar
 
+position logo on mobile screen to the left and big it a low opacity background
