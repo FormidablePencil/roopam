@@ -1,0 +1,33 @@
+@use '../styles/utilities'
+
+.container
+  height: utilities.$navbarHeight
+  background: rgb(20,96,150)
+  background: linear-gradient(180deg, rgba(20,96,150,1) 0%, rgba(11,62,84,1) 100%)
+  display: flex
+  justify-content: space-between
+  color: white
+  padding: 0em utilities.$gutterMargin
+  align-items: center
+  @media (max-width: 1200px)
+    padding: 0em 0em
+  @media (max-width: 1030px)
+    flex-direction: column
+
+.logo-container
+  img
+    width: 15em
+
+.navbar-container
+  
+
+ul
+  display: flex
+  margin: 0
+  padding: 0
+  @media (max-width: 666px)
+    flex-direction: column
+
+  li
+    margin: 1em 1em
+    padding-bottom: .5em

@@ -1,0 +1,47 @@
+@use '../styles/utilities'
+
+.container
+  position: relative
+  height: utilities.$fullScreenMinusNavHeight
+  width: 100vw
+
+.video
+  position: absolute
+  top: 0
+  left: 0
+  height: utilities.$fullScreenMinusNavHeight
+  width: 100vw
+  object-fit: cover
+  z-index: -1
+
+img
+  z-index: 3
+  position: absolute
+  width: 15em
+  bottom: 0
+  animation: slide-in-book 3s
+  animation-fill-mode: forwards
+
+.text-container
+  position: absolute
+  top: 30%
+  left: 10%
+  width: 30em
+
+.fade-gradient
+  position: absolute
+  bottom: 0
+  z-index: 2
+  width: 100%
+  height: 10em
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
+
+
+@keyframes slide-in-book
+  0%
+    transform: translateX(-800px)
+  40%
+    transform: translateX(0px)
+  100%
+    transform: scale(.5) translate(-290px, 150px)
+

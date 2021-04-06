@@ -1,0 +1,35 @@
+@use './styles/utilities'
+
+p, h1, h2, h3
+  font-family: Lato-regular
+  color: utilities.$darkPrimaryColor
+
+h1, h2, h3
+  color: utilities.$primaryColor
+
+.fade-gradient
+  position: absolute
+  bottom: 0
+  z-index: 2
+  width: 100%
+  height: 10em
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
+
+.fade-gradient-top
+  position: absolute
+  top: 0
+  z-index: 2
+  width: 100%
+  height: 5em
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)
+
+
+@font-face
+  font-family: 'Lato-Light'
+  src: local('Lato-Light'), url('./assets/Lato/Lato-Light.ttf') format('truetype')
+@font-face
+  font-family: 'Lato-Regular'
+  src: local('Lato-Light'), url('./assets/Lato/Lato-Regular.ttf') format('truetype')
+@font-face
+  font-family: 'Lato-Bold'
+  src: local('Lato-Light'), url('./assets/Lato/Lato-Bold.ttf') format('truetype')
