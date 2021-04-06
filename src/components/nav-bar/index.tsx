@@ -16,7 +16,6 @@ function NavBar() {
   const isProject = pathname !== "/" && pathname !== "/contact" && "active";
 
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [openProjects, setOpenProjects] = useState(isProject ? true : false);
 
   const navigateTo = (navTo: string) => {
     if (navTo === "/contact" || navTo === "/") setOpenProjects(false);
@@ -102,13 +101,20 @@ const NavItem = ({
   navigateTo;
 }) => {
   const [hoveringOver, setHoveringOver] = useState(false)
+  const isProject = navItemData.navigateTo === '/company'
+  const [openProjects, setOpenProjects] = useState(isProject ? true : false);
 
   return (
     <li
       onMouseEnter={() => setHoveringOver(true)}
       onMouseLeave={() => setHoveringOver(false)}
       onClick={() => navigateTo(navItemData.navigateTo)}
-      className={`nav-item ${clName}`}
+      className="nav-item"
+              // className={`nav-item ${
+              //   openProjects ? "open-projects" : "closed-projects"
+              // } 
+ // ${isProject && "active"} 
+            // hide-on-large`}
     >
       {navItemData.title}
       <ul className={ `dropdown-container ${!hoveringOver && 'dropdown-closed'}` }>
