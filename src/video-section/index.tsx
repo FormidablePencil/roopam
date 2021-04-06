@@ -16,7 +16,7 @@ function VideoSection() {
         <source title={homePageVid1.title} src={homePageVid1.url} />
       </video>
 
-      <button>{actionButton}</button>
+      {/* <button>{actionButton}</button> */}
       <img src={bookImg} alt="certification" />
       <div className="fade-gradient" />
     </div>
