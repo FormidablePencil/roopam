@@ -1,2 +1,6 @@
+@use '../../styles/utilities'
+
 ul
   display: flex
+  @media (max-width: utilities.$inBetweenSmallAndEvenSmallerScreen)
+    flex-direction: column

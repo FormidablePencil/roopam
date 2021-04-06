@@ -1,8 +1,12 @@
+@use '../../styles/utilities'
+
 .container
 
 .section-container
   flex: 1
   position: relative
+  @media (max-width: utilities.$inBetweenSmallAndEvenSmallerScreen)
+    padding: 0
 
 img.icon
   width: 5em

@@ -4,6 +4,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import "./index.scoped.sass";
 import NavbarToggleBtn from "./navbar-toggle-btn";
 import { logoImg } from "../../static-data/images";
+import { NavigationItemsT, navigationItems } from "../../static-data/navigation";
+import ReactTooltip from "react-tooltip";
 
 function NavBar() {
   const { pathname } = useLocation();
@@ -25,64 +27,6 @@ function NavBar() {
   const toggleProjectsDropdown = () => setOpenProjects((prev) => !prev);
   const closeNav = () => setNavbarOpen((prev) => !prev);
 
-  const navigationItems = [
-    {
-      title: "Company",
-      navigateTo: "/company",
-      dropdown: [
-        { title: "About", navigateTo: "/about" },
-        { title: "Team", navigateTo: "/team" },
-        { title: "Partners", navigateTo: "/partners" },
-        { title: "Clients", navigateTo: "/clients" },
-        { title: "Customer Testimonals", navigateTo: "/testimonals" },
-        { title: "Contact", navigateTo: "/contact" },
-      ],
-    },
-    { title: "COVID-19", navigateTo: "/covid" },
-    {
-      title: "Digital Pathology",
-      navigateTo: "/",
-      dropdown: [
-        { title: "Pathologists", navigateTo: "/pathologists" },
-        { title: "Leadership", navigateTo: "/leadership" },
-        { title: "IT", navigateTo: "/it" },
-        { title: "Patients", navigateTo: "/patients" },
-        { title: "Implementation", navigateTo: "/implementation" },
-        { title: "Integration", navigateTo: "/integration" },
-        { title: "Telepathology", navigateTo: "/telepathology" },
-        { title: "Workflow", navigateTo: "/workflow" },
-        { title: "Tumor Boards", navigateTo: "/tumor-boards" },
-        {
-          title: "Validation and Review",
-          navigateTo: "/validation-and-review",
-        },
-        { title: "Clinical Trials", navigateTo: "/clinical-trials" },
-        { title: "Support", navigateTo: "/support" },
-        { title: "SAAS Hosted Solution", navigateTo: "/saas-hosted-solution" },
-      ],
-    },
-    { title: "Solutions For", navigateTo: "/solutions" },
-    {
-      title: "Professional Services",
-      navigateTo: "/services",
-      dropdown: [
-        { title: "Physician Portal", navigateTo: "/physician-portal" },
-        {
-          title: "Ascent - Cloud-based LIS",
-          navigateTo: "/ascent-cloud-based-lis",
-        },
-        { title: "IT Services", navigateTo: "/copy-of-services-2" },
-        { title: "News & Events", navigateTo: "/news-events" },
-        {
-          title: "Awards and Recognition",
-          navigateTo: "/awards-and-recognition",
-        },
-        { title: "Blog", navigateTo: "/blog" },
-        { title: "Careers", navigateTo: "/careers" },
-      ],
-    },
-  ];
-
   return (
     <>
       <div className="absolute-container">
@@ -94,42 +38,49 @@ function NavBar() {
             navbarOpen={navbarOpen}
             setNavbarOpen={setNavbarOpen}
           />
-          <ul className={navbarOpen ? "active" : ""}>
-            <li
-              onClick={() => navigateTo("/")}
-              className={`nav-item ${isHome}`}
-            >
-              Home
-            </li>
 
-            <li
-              className={`nav-item ${isProject} hide-on-small`}
-              onClick={() => navigateTo("/projects/parallax")}
-            >
-              Projects
-            </li>
-            <li
-              onClick={toggleProjectsDropdown}
-              className={`nav-item ${
-                openProjects ? "open-projects" : "closed-projects"
-              } 
-            ${isProject && "active"}
-            hide-on-large`}
-            >
-              Projects
-              <IoIosArrowUp
-                size={24}
-                className={
-                  openProjects ? "dropdown-icon-rotate" : "dropdown-icon"
-                }
-              />
-            </li>
-            <li
-              onClick={() => navigateTo("/contact")}
-              className={`nav-item ${isContact}`}
-            >
-              Contact
-            </li>
+          <ul className={navbarOpen ? "active" : ""}>
+            <NavItem navigateTo={() => console.log('s')} clName="" navItemData={navigationItems[0]} />
+
+            <NavItem navigateTo={() => console.log('s')} clName="" navItemData={navigationItems[1]} />
+            <NavItem navigateTo={() => console.log('s')} clName="" navItemData={navigationItems[2]} />
+            <NavItem navigateTo={() => console.log('s')} clName="" navItemData={navigationItems[3]} />
+            <NavItem navigateTo={() => console.log('s')} clName="" navItemData={navigationItems[4]} />
+            {/* <li */}
+            {/*   onClick={() => navigateTo("/")} */}
+            {/*   className={`nav-item ${isHome}`} */}
+            {/* > */}
+            {/*   Home */}
+            {/* </li> */}
+
+            {/* <li */}
+            {/*   className={`nav-item ${isProject} hide-on-small`} */}
+            {/*   onClick={() => navigateTo("/projects/parallax")} */}
+            {/* > */}
+            {/*   Projects */}
+            {/* </li> */}
+            {/* <li */}
+            {/*   onClick={toggleProjectsDropdown} */}
+            {/*   className={`nav-item ${ */}
+            {/*     openProjects ? "open-projects" : "closed-projects" */}
+            {/*   } */} 
+            {/* ${isProject && "active"} */}
+            {/* hide-on-large`} */}
+            {/* > */}
+            {/*   Projects */}
+            {/*   <IoIosArrowUp */}
+            {/*     size={24} */}
+            {/*     className={ */}
+            {/*       openProjects ? "dropdown-icon-rotate" : "dropdown-icon" */}
+            {/*     } */}
+            {/*   /> */}
+            {/* </li> */}
+            {/* <li */}
+            {/*   onClick={() => navigateTo("/contact")} */}
+            {/*   className={`nav-item ${isContact}`} */}
+            {/* > */}
+            {/*   Contact */}
+            {/* </li> */}
           </ul>
         </div>
       </div>
@@ -140,5 +91,38 @@ function NavBar() {
     </>
   );
 }
+
+const NavItem = ({
+  clName,
+  navItemData,
+  navigateTo,
+}: {
+  clName: string;
+  navItemData: NavigationItemsT;
+  navigateTo;
+}) => {
+  const [hoveringOver, setHoveringOver] = useState(false)
+
+  return (
+    <li
+      onMouseEnter={() => setHoveringOver(true)}
+      onMouseLeave={() => setHoveringOver(false)}
+      onClick={() => navigateTo(navItemData.navigateTo)}
+      className={`nav-item ${clName}`}
+    >
+      {navItemData.title}
+      <ul className={ `dropdown-container ${!hoveringOver && 'dropdown-closed'}` }>
+        {navItemData.dropdown?.map((item) => (
+          <li
+            onClick={() => navigateTo(item.navigateTo)}
+            className={`nav-item `}
+          >
+            {item.title}
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
+};
 
 export default NavBar;

@@ -15,13 +15,15 @@
   z-index: -1
 
 img
-  z-index: 3
+  z-index: 2
   position: absolute
   width: 15em
   left: 8em
   bottom: 0
   animation: slide-in-book 3s
   animation-fill-mode: forwards
+  @media (max-width: utilities.$evenSmallScreen)
+    left: 0
 
 .text-container
   position: absolute
@@ -32,11 +34,17 @@ img
   background: rgba(237, 246, 255, .7)
   border-top-right-radius: 1em
   border-bottom-right-radius: 1em
+  @media (max-width: utilities.$evenSmallScreen)
+    width: 100%
+    padding: 1em 0
+    border-radius: 0
+    position: relative
+
 
 .fade-gradient
   position: absolute
   bottom: 0
-  z-index: 2
+  z-index: 1
   width: 100%
   height: 10em
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)

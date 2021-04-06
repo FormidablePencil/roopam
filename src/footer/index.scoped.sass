@@ -5,4 +5,9 @@
   background: #D8E3F1
   // padding: 0 utilities.$gutterMargin
   padding: 1em 2em
-  
+  @media (max-width: utilities.$smallScreen)
+    flex-direction: column
+    padding: 3em 8em
+  @media (max-width: utilities.$inBetweenSmallAndEvenSmallerScreen)
+    align-items: center
+    padding: 1em

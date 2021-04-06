@@ -1,9 +1,19 @@
+@use '../../styles/utilities'
+
 li
   flex-grow: 1
   width: 20em
+  @media (max-width: utilities.$smallScreen)
+    width: 30em
+  @media (max-width: utilities.$evenSmallScreen)
+    width: auto
 li:not(:first-child)
   margin-left: 4em
+  @media (max-width: utilities.$smallScreen)
+    margin-left: 0
 
 .contact-section
   width: 30em
-
+  @media (max-width: utilities.$evenSmallScreen)
+    width: auto
+    align-self: flex-start

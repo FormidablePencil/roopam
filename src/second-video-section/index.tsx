@@ -8,7 +8,7 @@ function SecondVideoSection() {
       <video autoPlay muted className="video" id="myVideo">
         <source title={homePageVid2.title} src={homePageVid2.url} />
       </video>
-      <div className="fade-gradient" style={{height: '5em'}} />
+      <div className="fade-gradient" style={{ height: "5em" }} />
       {/* allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" */}
       {/* allowFullScreen */}
     </div>

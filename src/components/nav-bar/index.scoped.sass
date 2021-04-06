@@ -1,4 +1,18 @@
 @use '../../styles/utilities'
+ul.dropdown-container
+  background: #2570C0
+  // background: #309FEE
+  position: absolute
+  top: 4.3em
+  display: flex
+  flex-direction: column
+  border-radius: .5em
+  li.nav-item
+    height: 1em !important
+    padding: 1em
+ul.dropdown-closed
+  display: none !important
+
 
 .on-tap-close-container
   position: absolute
@@ -37,7 +51,7 @@
 
 .nav-item
   text-decoration: none
-  color: utilities.$fontColor
+  color: white
 
 .active
   color: white
@@ -57,8 +71,8 @@
    justify-content: space-between
    align-items: center
    padding: 0 4em 0 4em
-   border: solid utilities.$secondaryColor 
-   border-bottom-width: .2em
+   border-bottom: solid utilities.$secondaryColor 
+   border-bottom-width: .15em
    @media (max-width: utilities.$smallScreen)
     background-color: transparent
     height: auto
@@ -100,7 +114,7 @@ ul
       border: solid utilities.$secondaryColor 0
       border-bottom-width: .2em
       &:first-child
-        padding-top: 0       
+        padding-top: 0
 
   &.active
     transform: translateY(0px)
