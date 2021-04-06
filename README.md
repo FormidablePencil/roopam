@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Gestalt site
 
 Better and improved version of Gestalt website.
 
