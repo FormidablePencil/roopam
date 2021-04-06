@@ -102,13 +102,13 @@ const NavItem = ({
   navigateTo;
 }) => {
   const [hoveringOver, setHoveringOver] = useState(false)
-  const isProject = navItemData.navigateTo === '/company'
+  const isProject = navItemData.navigateTo === '/company' ? false : false
   const [openProjects, setOpenProjects] = useState(isProject ? true : false);
 
   return (
     <li
-      onMouseEnter={() => setHoveringOver(true)}
-      onMouseLeave={() => setHoveringOver(false)}
+      // onMouseEnter={() => setHoveringOver(true)}
+      // onMouseLeave={() => setHoveringOver(false)}
       onClick={() => navigateTo(navItemData.navigateTo)}
       className="nav-item"
               // className={`nav-item ${
